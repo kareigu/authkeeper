@@ -2,12 +2,14 @@
 #include <string>
 #include "logger.hpp"
 #include "keylist.hpp"
+#include "config.hpp"
 
 struct CommandList {
   Keylist* keylist;
+  Config* config;
 
 
-  CommandList(Keylist* keylist);
+  CommandList(Keylist* keylist, Config* config);
   ~CommandList();
 
   //*

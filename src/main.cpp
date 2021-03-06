@@ -16,10 +16,10 @@ int main() {
 
     Keylist* keylist = new Keylist();
 
-    CommandList* command_list = new CommandList(keylist);
+    CommandList* command_list = new CommandList(keylist, config);
     
     CommandParser* command_parser = new CommandParser(command_list);
-    command_parser->parse_command("exit");
+    command_parser->parse_command("edit");
 
     return 0;
 }

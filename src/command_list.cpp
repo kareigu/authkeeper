@@ -1,13 +1,15 @@
+#include <string>
 #include "command_list.hpp"
 #include "logger.hpp"
-#include "keylist.hpp"
 
-CommandList::CommandList(Keylist* keylist) {
+CommandList::CommandList(Keylist* keylist, Config* config) {
   this->keylist = keylist;
+  this->config = config;
 }
 
 CommandList::~CommandList() {
   delete this->keylist;
+  delete this->config;
 }
 
 
@@ -25,5 +27,5 @@ std::string CommandList::loadkey_cmd(int index) {
 }
 
 void CommandList::edit_cmd() {
-  std::system("vim keys.txt");
+  std::system((this->config->editor + " keys.txt").c_str());
 }
