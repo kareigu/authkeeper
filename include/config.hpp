@@ -6,4 +6,7 @@ struct Config {
 
   Config();
   ~Config();  
+
+  private:
+    void assign_config_values(std::string (*config)[2]);
 };
