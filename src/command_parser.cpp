@@ -13,12 +13,17 @@ CommandParser::~CommandParser() {
 
 void CommandParser::parse_command(std::string input) {
 
-  if(input == "exit" || input == "quit")
-    this->cmdlist->exit_cmd();
-  else if(input == "load")
-    logger::print(this->cmdlist->loadkey_cmd(0));
-  else if(input == "edit")
-    this->cmdlist->edit_cmd();
-  else
-    logger::print("Invalid command");
+  try {
+    int num = std::stoi(input);
+    logger::print(this->cmdlist->loadkey_cmd(num));
+
+  } catch(const std::exception& e) {
+    
+    if(input == "exit" || input == "quit")
+      this->cmdlist->exit_cmd(); 
+    else if(input == "edit")
+      this->cmdlist->edit_cmd();
+    else
+      logger::print("Invalid command");
+  }
 }
