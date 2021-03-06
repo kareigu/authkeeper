@@ -1,4 +1,5 @@
 #pragma once
+#include <iostream>
 
 namespace logger {
   void print(std::string in);
