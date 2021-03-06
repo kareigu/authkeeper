@@ -19,8 +19,14 @@ int main() {
     CommandList* command_list = new CommandList(keylist, config);
     
     CommandParser* command_parser = new CommandParser(command_list);
-    command_parser->parse_command("edit");
 
+    while (true) {
+        std::string input;
+        std::cout << config->symbol << " ";
+        std::cin >> input;
+        command_parser->parse_command(input);
+    }
+    
     return 0;
 }
 

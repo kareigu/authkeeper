@@ -3,6 +3,7 @@
 
 struct Config {
   std::string editor = "vim";
+  std::string symbol = "$";
 
   Config();
   ~Config();  

@@ -47,6 +47,8 @@ void Config::assign_config_values(std::string (*config)[2]) {
       std::string curr = config[i][0];
       if(curr == "EDITOR")
         this->editor = config[i][1];
+      else if(curr == "SYMBOL")
+        this->symbol = config[i][1];
     }
   }
 }
