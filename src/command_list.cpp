@@ -23,7 +23,11 @@ void CommandList::exit_cmd() {
 }
 
 std::string CommandList::loadkey_cmd(int index) {
-  return this->keylist->keys[index];
+  std::string row_value = this->keylist->keys[index - 1];
+  if(index <= 0 || index > 300 || row_value.empty())
+    return "Invalid row";
+  else
+    return "#" + std::to_string(index) + ": " + row_value;
 }
 
 void CommandList::edit_cmd() {
