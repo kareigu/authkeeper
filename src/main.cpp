@@ -24,10 +24,10 @@ int main() {
         std::string input;
         std::cout << config->symbol << " ";
         std::cin >> input;
+        clear();
+        print_header();
         command_parser->parse_command(input);
     }
     
     return 0;
 }
-
-

@@ -2,9 +2,9 @@
 #include "logger.hpp"
 
 void print_header() {
-  logger::print("-------------------------------------------");
+  logger::print(" ----------------------------------------- ");
   logger::print("---------         v2.0          -----------");
-  logger::print("-------------------------------------------");
+  logger::print(" ----------------------------------------- ");
   logger::print("Type a number to load the key on that row");
   logger::print("'edit' - open the key file in a text editor");
   logger::print("'exit' or 'quit' - close the program");
