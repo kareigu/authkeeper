@@ -13,7 +13,7 @@ CommandParser::~CommandParser() {
 
 void CommandParser::parse_command(std::string input) {
 
-  if(input == "exit")
+  if(input == "exit" || input == "quit")
     this->cmdlist->exit_cmd();
   else if(input == "load")
     logger::print(this->cmdlist->loadkey_cmd(0));
