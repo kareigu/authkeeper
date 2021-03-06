@@ -33,3 +33,11 @@ std::string CommandList::loadkey_cmd(int index) {
 void CommandList::edit_cmd() {
   std::system((this->config->editor + " keys.txt").c_str());
 }
+
+void CommandList::help_cmd() {
+  logger::print("--------");
+  logger::print("'edit' - opens the keyfile in the configured text editor");
+  logger::print("'help' - view this command list");
+  logger::print("'exit' - close to program");
+  logger::print("'quit' - close to program");
+}

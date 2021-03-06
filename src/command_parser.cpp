@@ -18,11 +18,13 @@ void CommandParser::parse_command(std::string input) {
     logger::print(this->cmdlist->loadkey_cmd(num));
 
   } catch(const std::exception& e) {
-    
+
     if(input == "exit" || input == "quit")
       this->cmdlist->exit_cmd(); 
     else if(input == "edit")
       this->cmdlist->edit_cmd();
+    else if(input == "help")
+      this->cmdlist->help_cmd();
     else
       logger::print("Invalid command");
   }

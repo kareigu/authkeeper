@@ -12,7 +12,6 @@ int main() {
     print_header();
 
     Config* config = new Config();
-    logger::print(config->editor);
 
     Keylist* keylist = new Keylist();
 
