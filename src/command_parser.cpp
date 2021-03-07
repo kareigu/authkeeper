@@ -25,6 +25,8 @@ void CommandParser::parse_command(std::string input) {
       this->cmdlist->edit_cmd();
     else if(input == "help")
       this->cmdlist->help_cmd();
+    else if(input == "config")
+      this->cmdlist->config_cmd();
     else
       logger::print("Invalid command");
   }

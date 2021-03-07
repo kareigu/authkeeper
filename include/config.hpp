@@ -8,7 +8,8 @@ struct Config {
   Config();
   ~Config();  
 
+  void write_config_file();
+
   private:
     void assign_config_values(std::string (*config)[2]);
-    void write_config_file();
 };

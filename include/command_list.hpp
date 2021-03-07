@@ -19,5 +19,6 @@ struct CommandList {
   std::string loadkey_cmd(int index);
   void edit_cmd();
   void help_cmd();
+  void config_cmd(bool print_header = true);
 };
 
