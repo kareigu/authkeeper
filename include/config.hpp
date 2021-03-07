@@ -10,4 +10,5 @@ struct Config {
 
   private:
     void assign_config_values(std::string (*config)[2]);
+    void write_config_file();
 };

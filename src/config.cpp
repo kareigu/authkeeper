@@ -4,9 +4,10 @@
 #include "logger.hpp"
 
 const int CONFIG_LINE_COUNT = 2;
+const std::string CONFIG_FILE_NAME = "authkeeper.conf";
 
 std::string* read_config_file() {
-  std::ifstream inputStream("authkeeper.conf");
+  std::ifstream inputStream(CONFIG_FILE_NAME);
   std::string* lines = new std::string[CONFIG_LINE_COUNT];
   
   if(inputStream.is_open()) {
@@ -18,6 +19,17 @@ std::string* read_config_file() {
   }
 
   return lines;
+}
+
+void Config::write_config_file() {
+  std::ofstream outputStream(CONFIG_FILE_NAME);
+  
+  if(outputStream.is_open()) {
+    outputStream << "EDITOR=" << this->editor << std::endl;
+    outputStream << "SYMBOL=" << this->symbol << std::endl;
+
+    outputStream.close();
+  }
 }
 
 void split_config_lines(std::string* config_lines, std::string (*config)[2]) {
@@ -64,6 +76,7 @@ Config::Config() {
   auto config = new std::string[CONFIG_LINE_COUNT][2];
   split_config_lines(config_lines, config);
   assign_config_values(config);
+  write_config_file();
 }
 
 Config::~Config() {
