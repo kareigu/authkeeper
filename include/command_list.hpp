@@ -15,7 +15,7 @@ struct CommandList {
   //*
   //* Commands
   //*
-  void exit_cmd();
+  void exit_cmd(bool* return_to_main);
   std::string loadkey_cmd(int index);
   void edit_cmd();
   void help_cmd();

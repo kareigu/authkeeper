@@ -17,9 +17,9 @@ CommandList::~CommandList() {
 //* Commands
 //*
 
-void CommandList::exit_cmd() {
+void CommandList::exit_cmd(bool* return_to_main) {
   logger::print("Exiting");
-  exit(0);
+  *return_to_main = false;
 }
 
 std::string CommandList::loadkey_cmd(int index) {

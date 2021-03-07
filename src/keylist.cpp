@@ -10,5 +10,5 @@ void Keylist::refresh_keys() {
 }
 
 Keylist::~Keylist() {
-  delete this->keys;
+  delete[] this->keys;
 }

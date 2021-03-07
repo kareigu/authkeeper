@@ -17,9 +17,10 @@ int main() {
 
   CommandList* command_list = new CommandList(keylist, config);
   
-  CommandParser* command_parser = new CommandParser(command_list);
+  bool run = true;
+  CommandParser* command_parser = new CommandParser(command_list, &run);
 
-  while (true) {
+  while (run) {
     std::string input;
     std::cout << config->symbol << " ";
     std::cin >> input;
@@ -28,5 +29,7 @@ int main() {
     command_parser->parse_command(input);
   }
   
+  //* Deletes all other objects through deconstructors
+  delete command_parser;
   return 0;
 }
