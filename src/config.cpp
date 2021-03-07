@@ -39,6 +39,8 @@ void split_config_lines(std::string* config_lines, std::string (*config)[2]) {
     config[i][0] = setting;
     config[i][1] = value;
   }
+
+  delete[] config_lines;
 }
 
 void Config::assign_config_values(std::string (*config)[2]) {
@@ -51,6 +53,8 @@ void Config::assign_config_values(std::string (*config)[2]) {
         this->symbol = config[i][1];
     }
   }
+  
+  delete[] config;
 }
 
 
