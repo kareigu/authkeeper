@@ -1,5 +1,7 @@
 #pragma once
 
-void print_header();
+namespace utils {
+  void print_header();
 
-void clear();
+  void clear();
+}

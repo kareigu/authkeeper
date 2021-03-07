@@ -8,8 +8,8 @@
 #include "config.hpp"
 
 int main() {
-  clear();
-  print_header();
+  utils::clear();
+  utils::print_header();
 
   Config* config = new Config();
 
@@ -24,8 +24,8 @@ int main() {
     std::string input;
     std::cout << config->symbol << " ";
     std::cin >> input;
-    clear();
-    print_header();
+    utils::clear();
+    utils::print_header();
     command_parser->parse_command(input);
   }
   

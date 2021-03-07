@@ -1,6 +1,7 @@
 #include <string>
 #include "command_list.hpp"
 #include "logger.hpp"
+#include "utils.hpp"
 
 CommandList::CommandList(Keylist* keylist, Config* config) {
   this->keylist = keylist;
@@ -84,6 +85,8 @@ void CommandList::config_cmd(bool print_header) {
   std::cin >> input;
 
   *setting_to_change = input;
+  utils::clear();
+  utils::print_header();
   logger::print("Changed setting to: " + input);
   this->config->write_config_file();
 }
