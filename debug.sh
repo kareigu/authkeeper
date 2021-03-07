@@ -1,4 +1,3 @@
 #!/bin/bash
-make clean
-make release
+make debug
 ./build/bin/authkeeper
