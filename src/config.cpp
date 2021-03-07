@@ -1,6 +1,7 @@
 #include "config.hpp"
 #include <fstream>
 #include <string>
+#include <filesystem>
 #include "logger.hpp"
 
 const int CONFIG_LINE_COUNT = 2;
@@ -72,11 +73,14 @@ void Config::assign_config_values(std::string (*config)[2]) {
 
 
 Config::Config() {
-  std::string* config_lines = read_config_file();
-  auto config = new std::string[CONFIG_LINE_COUNT][2];
-  split_config_lines(config_lines, config);
-  assign_config_values(config);
-  write_config_file();
+  if(std::filesystem::exists(CONFIG_FILE_NAME)) {
+    std::string* config_lines = read_config_file();
+    auto config = new std::string[CONFIG_LINE_COUNT][2];
+    split_config_lines(config_lines, config);
+    assign_config_values(config);
+  } else {
+    write_config_file();
+  }
 }
 
 Config::~Config() {
