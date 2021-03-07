@@ -32,6 +32,7 @@ std::string CommandList::loadkey_cmd(int index) {
 
 void CommandList::edit_cmd() {
   std::system((this->config->editor + " keys.txt").c_str());
+  this->keylist->refresh_keys();
 }
 
 void CommandList::help_cmd() {
